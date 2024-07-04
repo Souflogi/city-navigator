@@ -8,8 +8,3 @@
     text-decoration: none;
     color: inherit;
 }
-
-.nav :global(.active) {
-    background-color: aquamarine;
-    font-weight: bold;
-}
