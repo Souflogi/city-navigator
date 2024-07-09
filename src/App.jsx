@@ -8,7 +8,8 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
-import CountryList from "./components/CountryList.jsx";
+import CountryList from "./components/CountryList";
+import CityInfo from "./components/CityInfo";
 function App() {
   const [loading, setLoading] = useState(false);
   const [cities, setCities] = useState([]);
@@ -50,6 +51,7 @@ function App() {
               path="cities"
               element={<CityList cities={cities} loading={loading} />}
             />
+            <Route path="cities/:cityId" element={<CityInfo />} />
             <Route
               path="countries"
               element={<CountryList cities={cities} loading={loading} />}
