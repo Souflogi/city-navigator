@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  position: relative;
 }
 
 .city::-webkit-scrollbar {
@@ -48,4 +50,12 @@
 .city a:visited {
   font-size: 1.6rem;
   color: var(--color-brand--1);
+}
+
+.floatingFlag {
+
+  position: absolute;
+  font-size: 2000%;
+  top: -10rem;
+  right: -5rem;
 }

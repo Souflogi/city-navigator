@@ -1,9 +1,12 @@
-import Spinner from "./Spinner";
+import Spinner from "../shared/components/Spinner";
 
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
 import Message from "./Message";
-function CityList({ cities, loading }) {
+import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+function CityList() {
+  const { cities, loading } = useConsumeCitiesContext();
+
   const citiesList = cities.map(city => <CityItem key={city.id} city={city} />);
 
   if (loading) return <Spinner />;

@@ -9,12 +9,14 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "json-server --watch data/cities.json --port 8000  ",
-    "server-delay": "json-server --watch data/cities.json --port 8000 --delay 2000"
+    "server-delay": "json-server --watch data/cities.json --port 8000 --delay 1000"
   },
   "dependencies": {
     "json-server": "^0.16.3",
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
