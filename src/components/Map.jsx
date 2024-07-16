@@ -29,8 +29,10 @@ function Map() {
   const lng = parseFloat(searchParams.get("lng"));
 
   useEffect(() => {
-    if (lat && lng) setMapPosition([lat, lng]);
-    setGeoLocationPostion(null);
+    if (lat && lng) {
+      setMapPosition([lat, lng]);
+      setGeoLocationPostion(null);
+    }
   }, [lat, lng]);
 
   useEffect(() => {
@@ -97,7 +99,7 @@ function ViewCurrentCity({ center }) {
   useEffect(() => {
     if (center) {
       map.flyTo(center, map.getZoom(), {
-        duration: 2, // Duration of animation in seconds
+        duration: 4, // Duration of animation in seconds
       });
     }
   }, [center, map]);

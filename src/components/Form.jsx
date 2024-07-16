@@ -24,23 +24,6 @@ function Form() {
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
-  // const onSubmitHandler = e => {
-  //   e.preventDefault();
-  //   const uploadCity = async () => {
-  //     const resp = await fetch("http://localhost:8000/cities", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         id: 2,
-  //         title: "New Post",
-  //       }),
-  //     });
-  //   };
-  //   uploadCity();
-  // };
-
   return (
     <form className={styles.form}>
       <div className={styles.row}>

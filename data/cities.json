@@ -75,14 +75,26 @@
     {
       "cityName": "AbdelAli",
       "country": "Palestine",
-      "emoji": "💀",
+      "emoji": "🚀",
       "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "notes": "Fire   🚀",
       "position": {
         "lat": 33.59875393145049,
         "lng": -7.4829642779335055
       },
       "id": 98443173
+    },
+    {
+      "cityName": "Othmane",
+      "country": "Germany",
+      "emoji": "🚀",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Fire 🚀",
+      "position": {
+        "lat": 52.4637206582247,
+        "lng": 13.436928076427312
+      },
+      "id": 984173
     }
   ]
 }

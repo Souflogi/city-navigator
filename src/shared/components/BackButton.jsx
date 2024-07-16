@@ -9,7 +9,7 @@ function BackButton() {
       action={e => {
         //in case it's inside a form
         e?.preventDefault();
-        navigate(-1);
+        navigate("../");
       }}
     >
       &larr; Back
