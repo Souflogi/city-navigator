@@ -22,6 +22,6 @@ function useGeolocation(defaultPosition = null) {
     );
   }
 
-  return { isLoading, position, error, getPosition };
+  return { isLoading, position, error, getPosition, setPosition };
 }
 export { useGeolocation };

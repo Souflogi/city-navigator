@@ -15,12 +15,14 @@ import Button from "../shared/components/Button";
 
 function Map() {
   const [searchParams] = useSearchParams();
+
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const { cities } = useConsumeCitiesContext();
   const {
     isLoading: isLoadingPosition,
     getPosition: getGeolocationPosition,
     position: geoLocationPosition,
+    setPosition: setGeoLocationPostion,
   } = useGeolocation();
 
   const lat = parseFloat(searchParams.get("lat"));
@@ -28,17 +30,22 @@ function Map() {
 
   useEffect(() => {
     if (lat && lng) setMapPosition([lat, lng]);
+    setGeoLocationPostion(null);
   }, [lat, lng]);
 
   useEffect(() => {
-    if (geoLocationPosition) setMapPosition(geoLocationPosition);
+    if (geoLocationPosition) {
+      setMapPosition(geoLocationPosition);
+    }
   }, [geoLocationPosition]);
 
   return (
     <div className={styles.mapContainer}>
-      <Button type={"position"} action={getGeolocationPosition}>
-        {isLoadingPosition ? "loading..." : "get my location"}
-      </Button>
+      {!geoLocationPosition && (
+        <Button type={"position"} action={getGeolocationPosition}>
+          {isLoadingPosition ? "loading..." : "get my location"}
+        </Button>
+      )}
 
       <MapContainer className={styles.map} center={mapPosition} zoom={16}>
         <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
@@ -81,19 +88,19 @@ function ClickDetector() {
 function ViewCurrentCity({ center }) {
   const map = useMap();
 
-  useEffect(() => {
-    if (center) {
-      map.setView(center);
-    }
-  }, [center, map]);
-
   // useEffect(() => {
   //   if (center) {
-  //     map.flyTo(center, map.getZoom(), {
-  //       duration: 3, // Duration of animation in seconds
-  //     });
+  //     map.setView(center);
   //   }
   // }, [center, map]);
+
+  useEffect(() => {
+    if (center) {
+      map.flyTo(center, map.getZoom(), {
+        duration: 2, // Duration of animation in seconds
+      });
+    }
+  }, [center, map]);
 
   return null;
 }
