@@ -95,6 +95,102 @@
         "lng": 13.436928076427312
       },
       "id": 984173
+    },
+    {
+      "cityName": "Sintra",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2024-07-17T17:35:48.071Z",
+      "notes": "no way i am coming back here ",
+      "position": {
+        "lat": "38.8397936303553",
+        "lng": "-9.324770126137535"
+      },
+      "id": "18536015"
+    },
+    {
+      "cityName": "Sale",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2024-07-17T17:43:28.288Z",
+      "notes": "",
+      "position": {
+        "lat": "34.02186749913918",
+        "lng": "-6.7314405041056045"
+      },
+      "id": "99258847"
+    },
+    {
+      "cityName": "Cherrat",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2024-07-17T17:58:45.163Z",
+      "notes": "mzyana had lblasa",
+      "position": {
+        "lat": "33.78723605480126",
+        "lng": "-7.130209871994253"
+      },
+      "id": "FGtinlC"
+    },
+    {
+      "cityName": "Khatazakane",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2024-07-17T18:00:45.392Z",
+      "notes": "wa3ra kyna lol",
+      "position": {
+        "lat": "32.18613296612906",
+        "lng": "-9.042625894544598"
+      },
+      "id": "ixk43lk"
+    },
+    {
+      "cityName": "Bir Mogrein",
+      "country": "Mauritania",
+      "emoji": "🇲🇷",
+      "date": "2024-07-17T18:01:56.268Z",
+      "notes": "nice",
+      "position": {
+        "lat": "26.566656817116925",
+        "lng": "-8.393944617504307"
+      },
+      "id": "r_WsWfo"
+    },
+    {
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-07-17T18:13:30.498Z",
+      "notes": "kharya  '💩💩💩💩💩💩💩",
+      "position": {
+        "lat": "48.84995235350214",
+        "lng": "2.3581148876940587"
+      },
+      "id": "ohooxm0"
+    },
+    {
+      "cityName": "Pescasseroli",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2024-07-17T18:45:59.734Z",
+      "notes": "pizza 🍕",
+      "position": {
+        "lat": "41.788512674999495",
+        "lng": "13.797513339576307"
+      },
+      "id": "Pc1QLpK"
+    },
+    {
+      "cityName": "Boatlaname",
+      "country": "Botswana",
+      "emoji": "🇧🇼",
+      "date": "2024-07-17T18:51:52.363Z",
+      "notes": "/??",
+      "position": {
+        "lat": "-23.51380270964144",
+        "lng": "25.980415761342734"
+      },
+      "id": "aVQcHR8"
     }
   ]
 }

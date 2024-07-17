@@ -38,8 +38,31 @@ const CitiesProvider = ({ children }) => {
       setLoading(false);
     }
   };
+
+  // Function to add city data to the database
+  const addCityToDb = async newCity => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${BASE_URL}/cities`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCity),
+      });
+      const addedCity = await response.json();
+      setCities(cities => [...cities, addedCity]);
+    } catch {
+      console.log("You have an error ⛔ from adding the new city.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <CitiesContext.Provider value={{ cities, loading, currentCity, getCity }}>
+    <CitiesContext.Provider
+      value={{ cities, loading, currentCity, getCity, addCityToDb }}
+    >
       {children}
     </CitiesContext.Provider>
   );
