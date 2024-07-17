@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import {
   MapContainer,
@@ -12,11 +12,12 @@ import { useEffect, useState } from "react";
 import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
 import { useGeolocation } from "../shared/hooks/useGeolocation";
 import Button from "../shared/components/Button";
+import { useUrlPosition } from "../shared/hooks/useUrlPosition";
 
 function Map() {
-  const [searchParams] = useSearchParams();
-
   const [mapPosition, setMapPosition] = useState([40, 0]);
+
+  const [lat, lng] = useUrlPosition();
   const { cities } = useConsumeCitiesContext();
   const {
     isLoading: isLoadingPosition,
@@ -25,9 +26,7 @@ function Map() {
     setPosition: setGeoLocationPostion,
   } = useGeolocation();
 
-  const lat = parseFloat(searchParams.get("lat"));
-  const lng = parseFloat(searchParams.get("lng"));
-
+  // Update map position if lat and lng are in the URL
   useEffect(() => {
     if (lat && lng) {
       setMapPosition([lat, lng]);
@@ -35,16 +34,21 @@ function Map() {
     }
   }, [lat, lng]);
 
+  // Update search params when geolocation position changes
   useEffect(() => {
     if (geoLocationPosition) {
       setMapPosition(geoLocationPosition);
     }
   }, [geoLocationPosition]);
 
+  const positioningHandler = () => {
+    getGeolocationPosition();
+  };
+
   return (
     <div className={styles.mapContainer}>
       {!geoLocationPosition && (
-        <Button type={"position"} action={getGeolocationPosition}>
+        <Button type={"position"} action={positioningHandler}>
           {isLoadingPosition ? "loading..." : "get my location"}
         </Button>
       )}
@@ -72,6 +76,7 @@ function Map() {
   );
 }
 /************************************************** */
+// Handles map clicks to navigate to a form with lat and lng in the URL
 
 function ClickDetector() {
   const navigate = useNavigate();
@@ -87,6 +92,8 @@ function ClickDetector() {
 }
 
 /********************************************** */
+// Updates the map view to the current center position
+
 function ViewCurrentCity({ center }) {
   const map = useMap();
 
@@ -99,7 +106,7 @@ function ViewCurrentCity({ center }) {
   useEffect(() => {
     if (center) {
       map.flyTo(center, map.getZoom(), {
-        duration: 4, // Duration of animation in seconds
+        duration: 1, // Duration of animation in seconds
       });
     }
   }, [center, map]);
