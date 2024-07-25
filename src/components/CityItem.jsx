@@ -3,7 +3,9 @@ import styles from "./CityItem.module.css";
 import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
 
 function CityItem({ city }) {
-  const active = city.id === useConsumeCitiesContext().currentCity.id;
+  const { currentCity, deleteCityFromDb } = useConsumeCitiesContext();
+
+  const active = city.id === currentCity.id;
 
   const { cityName, emoji, date, id, position } = city;
   const formatDate = date =>
@@ -12,6 +14,11 @@ function CityItem({ city }) {
       month: "long",
       year: "numeric",
     }).format(new Date(date));
+
+  const onDeleteHandler = e => {
+    e.preventDefault();
+    deleteCityFromDb(city.id);
+  };
 
   return (
     <li>
@@ -22,7 +29,9 @@ function CityItem({ city }) {
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>({formatDate(date)})</time>
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn} onClick={onDeleteHandler}>
+          &times;
+        </button>
       </Link>
     </li>
   );

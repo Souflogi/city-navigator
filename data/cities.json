@@ -1,196 +1,28 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Faro",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 36.9778852,
-        "lng": -7.9923575
-      },
-      "id": 3930385
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "cityName": "Casablanca",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2024-07-24T17:00:45.262Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "33.58459327041162",
+        "lng": "-7.58657455444336"
       },
-      "id": 17806751
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+      "id": 1
     },
     {
       "cityName": "Casablanca",
       "country": "Morocco",
       "emoji": "🇲🇦",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 33.5722875,
-        "lng": -7.5869925
-      },
-      "id": 9843197
-    },
-    {
-      "cityName": "Rabat",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 33.9691914,
-        "lng": -6.9396625
-      },
-      "id": 9844317
-    },
-    {
-      "cityName": "AbdelAli",
-      "country": "Palestine",
-      "emoji": "🚀",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Fire   🚀",
-      "position": {
-        "lat": 33.59875393145049,
-        "lng": -7.4829642779335055
-      },
-      "id": 98443173
-    },
-    {
-      "cityName": "Othmane",
-      "country": "Germany",
-      "emoji": "🚀",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Fire 🚀",
-      "position": {
-        "lat": 52.4637206582247,
-        "lng": 13.436928076427312
-      },
-      "id": 984173
-    },
-    {
-      "cityName": "Sintra",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2024-07-17T17:35:48.071Z",
-      "notes": "no way i am coming back here ",
-      "position": {
-        "lat": "38.8397936303553",
-        "lng": "-9.324770126137535"
-      },
-      "id": "18536015"
-    },
-    {
-      "cityName": "Sale",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-17T17:43:28.288Z",
+      "date": "2024-07-24T17:01:14.032Z",
       "notes": "",
       "position": {
-        "lat": "34.02186749913918",
-        "lng": "-6.7314405041056045"
+        "lat": "33.5998041868908",
+        "lng": "-7.48921036720276"
       },
-      "id": "99258847"
-    },
-    {
-      "cityName": "Cherrat",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-17T17:58:45.163Z",
-      "notes": "mzyana had lblasa",
-      "position": {
-        "lat": "33.78723605480126",
-        "lng": "-7.130209871994253"
-      },
-      "id": "FGtinlC"
-    },
-    {
-      "cityName": "Khatazakane",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-17T18:00:45.392Z",
-      "notes": "wa3ra kyna lol",
-      "position": {
-        "lat": "32.18613296612906",
-        "lng": "-9.042625894544598"
-      },
-      "id": "ixk43lk"
-    },
-    {
-      "cityName": "Bir Mogrein",
-      "country": "Mauritania",
-      "emoji": "🇲🇷",
-      "date": "2024-07-17T18:01:56.268Z",
-      "notes": "nice",
-      "position": {
-        "lat": "26.566656817116925",
-        "lng": "-8.393944617504307"
-      },
-      "id": "r_WsWfo"
-    },
-    {
-      "cityName": "Paris",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2024-07-17T18:13:30.498Z",
-      "notes": "kharya  '💩💩💩💩💩💩💩",
-      "position": {
-        "lat": "48.84995235350214",
-        "lng": "2.3581148876940587"
-      },
-      "id": "ohooxm0"
-    },
-    {
-      "cityName": "Pescasseroli",
-      "country": "Italy",
-      "emoji": "🇮🇹",
-      "date": "2024-07-17T18:45:59.734Z",
-      "notes": "pizza 🍕",
-      "position": {
-        "lat": "41.788512674999495",
-        "lng": "13.797513339576307"
-      },
-      "id": "Pc1QLpK"
-    },
-    {
-      "cityName": "Boatlaname",
-      "country": "Botswana",
-      "emoji": "🇧🇼",
-      "date": "2024-07-17T18:51:52.363Z",
-      "notes": "/??",
-      "position": {
-        "lat": "-23.51380270964144",
-        "lng": "25.980415761342734"
-      },
-      "id": "aVQcHR8"
+      "id": 2
     }
   ]
 }

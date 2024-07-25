@@ -83,6 +83,7 @@ function ClickDetector() {
   useMapEvents({
     click: e => {
       const { lat, lng } = e.latlng;
+      console.log(e.latlng);
       e.originalEvent.preventDefault();
       navigate(`form?lat=${lat}&lng=${lng}`);
     },
@@ -105,7 +106,7 @@ function ViewCurrentCity({ center }) {
 
   useEffect(() => {
     if (center) {
-      map.flyTo(center, map.getZoom(), {
+      map.flyTo(center, 10, {
         duration: 1, // Duration of animation in seconds
       });
     }

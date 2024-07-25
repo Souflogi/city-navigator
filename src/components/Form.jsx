@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Message from "../shared/components/Message";
 import BackButton from "../shared/components/BackButton";
 import Button from "../shared/components/Button";
-import Spinner from "../shared/components/Spinner";
 import { useUrlPosition } from "../shared/hooks/useUrlPosition";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
@@ -38,10 +37,9 @@ function Form() {
   const [isLoadingGeoLocoding, setIsloadingGeoLocoding] = useState(null);
   const [geocodingError, setGeocodingError] = useState("");
 
-  // React Router hook for navigation
-  const navigate = useNavigate();
+  const { addCityToDb, loading: contextLoading } = useConsumeCitiesContext();
 
-  const { addCityToDb } = useConsumeCitiesContext();
+  const navigate = useNavigate();
 
   // Fetch city data based on latitude and longitude
   useEffect(() => {
@@ -53,6 +51,7 @@ function Form() {
         const response = await fetch(
           `${BASE_URL}?latitude=${lat}&longitude=${lng}`
         );
+        if (!response.ok) throw new Error("Please Select an other Area!");
         const data = await response.json();
 
         if (data.countryCode === "")
@@ -75,7 +74,7 @@ function Form() {
   }, [lat, lng]);
 
   // Handle form submission
-  const handelOnSubmit = e => {
+  const handelOnSubmit = async e => {
     e.preventDefault();
     const newCity = {
       cityName,
@@ -88,12 +87,12 @@ function Form() {
         lng,
       },
     };
-    addCityToDb(newCity);
+    await addCityToDb(newCity);
     navigate("../cities");
   };
 
-  // Render spinner while loading geolocation
-  if (isLoadingGeoLocoding) return <Spinner />;
+  // // Render spinner while loading geolocation
+  // if (isLoadingGeoLocoding) return <Spinner />;
 
   // Render error message if there is a geocoding error
   if (geocodingError !== "") return <Message message={geocodingError} />;
@@ -110,7 +109,10 @@ function Form() {
   // Render the form
   else
     return (
-      <form className={styles.form} onSubmit={handelOnSubmit}>
+      <form
+        className={`${styles.form} ${contextLoading ? styles.loading : ""}`}
+        onSubmit={handelOnSubmit}
+      >
         <div className={styles.row}>
           <label htmlFor="cityName">City name</label>
           <input
