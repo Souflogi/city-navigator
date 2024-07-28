@@ -9,9 +9,12 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
-import { useGeolocation } from "../shared/hooks/useGeolocation";
+// Shared Component
 import Button from "../shared/components/Button";
+// Context Api
+import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+// Custom Hooks
+import { useGeolocation } from "../shared/hooks/useGeolocation";
 import { useUrlPosition } from "../shared/hooks/useUrlPosition";
 
 function Map() {
@@ -34,13 +37,14 @@ function Map() {
     }
   }, [lat, lng]);
 
-  // Update search params when geolocation position changes
+  // Update map position when geolocation position changes
   useEffect(() => {
     if (geoLocationPosition) {
       setMapPosition(geoLocationPosition);
     }
   }, [geoLocationPosition]);
 
+  //Locating user
   const positioningHandler = () => {
     getGeolocationPosition();
   };
@@ -83,7 +87,7 @@ function ClickDetector() {
   useMapEvents({
     click: e => {
       const { lat, lng } = e.latlng;
-      console.log(e.latlng);
+
       e.originalEvent.preventDefault();
       navigate(`form?lat=${lat}&lng=${lng}`);
     },
@@ -98,14 +102,9 @@ function ClickDetector() {
 function ViewCurrentCity({ center }) {
   const map = useMap();
 
-  // useEffect(() => {
-  //   if (center) {
-  //     map.setView(center);
-  //   }
-  // }, [center, map]);
-
   useEffect(() => {
     if (center) {
+      //  map.setView(center) ; OR
       map.flyTo(center, 10, {
         duration: 1, // Duration of animation in seconds
       });

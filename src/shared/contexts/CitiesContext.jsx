@@ -35,11 +35,13 @@ const CitiesProvider = ({ children }) => {
   const getCity = async cityId => {
     try {
       setLoading(true);
-      const resp = await fetch(`${BASE_URL}/cities/${cityId}`);
-      const data = await resp.json();
+      const response = await fetch(`${BASE_URL}/cities/${cityId}`);
+      if (!response.ok)
+        throw new Error("You have an error ⛔ from getting current city");
+      const data = await response.json();
       setCurrentCity(data);
-    } catch {
-      console.log("You have an error ⛔ from getting current city");
+    } catch (err) {
+      console.log(err);
     } finally {
       setLoading(false);
     }
@@ -56,11 +58,15 @@ const CitiesProvider = ({ children }) => {
         },
         body: JSON.stringify(newCity),
       });
+
+      if (!response.ok)
+        throw new Error("You have an error ⛔ from adding the new city.");
+
       const addedCity = await response.json();
       setCities(cities => [addedCity, ...cities]);
       setCurrentCity(addedCity);
-    } catch {
-      console.log("You have an error ⛔ from adding the new city.");
+    } catch (err) {
+      console.log(err);
     } finally {
       setLoading(false);
     }
@@ -72,10 +78,11 @@ const CitiesProvider = ({ children }) => {
       const response = await fetch(`${BASE_URL}/cities/${cityId}`, {
         method: "DELETE",
       });
-      if (!response.ok) throw new Error("Can't delete city");
+      if (!response.ok)
+        throw new Error("You have an error ⛔ from deleting the city.");
       setCities(cities => cities.filter(city => city.id !== cityId));
     } catch (err) {
-      console.log("You have an error ⛔ from deleting the city.");
+      console.log(err);
     } finally {
       setLoading(false);
     }

@@ -110,7 +110,7 @@ function Form() {
   else
     return (
       <form
-        className={`${styles.form} ${contextLoading ? styles.loading : ""}`}
+        className={`${styles.form} ${contextLoading || isLoadingGeoLocoding ? styles.loading : ""}`}
         onSubmit={handelOnSubmit}
       >
         <div className={styles.row}>
