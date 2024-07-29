@@ -2,9 +2,9 @@ import Spinner from "../shared/components/Spinner";
 import Message from "../shared/components/Message";
 import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+import { useCitiesContext } from "../shared/contexts/CitiesContext";
 function CountryList() {
-  const { loading, cities } = useConsumeCitiesContext();
+  const { loading, cities } = useCitiesContext();
   const uniqueCountries = cities.reduce((accumulator, currentCity) => {
     // Check if current city's country already exists in accumulator
     const isCountryAlreadyAdded = accumulator.some(

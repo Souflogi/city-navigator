@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 // Shared Component
 import Button from "../shared/components/Button";
 // Context Api
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+import { useCitiesContext } from "../shared/contexts/CitiesContext";
 // Custom Hooks
 import { useGeolocation } from "../shared/hooks/useGeolocation";
 import { useUrlPosition } from "../shared/hooks/useUrlPosition";
@@ -21,7 +21,7 @@ function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
   const [lat, lng] = useUrlPosition();
-  const { cities } = useConsumeCitiesContext();
+  const { cities } = useCitiesContext();
   const {
     isLoading: isLoadingPosition,
     getPosition: getGeolocationPosition,

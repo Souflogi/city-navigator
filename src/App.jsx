@@ -10,6 +10,8 @@ import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
 import CityInfo from "./components/CityInfo";
 import Form from "./components/Form";
+import RouteProtection from "./shared/components/RouteProtection";
+// import PrivateRoute from "./shared/components/PrivateRoute";
 
 function App() {
   return (
@@ -19,7 +21,14 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />}>
+        <Route
+          path="app"
+          element={
+            <RouteProtection>
+              <AppLayout />
+            </RouteProtection>
+          }
+        >
           <Route index element={<Navigate replace to={"cities"} />} />
           <Route path="cities" element={<CityList />} />
           <Route path="cities/:cityId" element={<CityInfo />} />

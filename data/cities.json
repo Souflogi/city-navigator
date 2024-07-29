@@ -1,42 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Casablanca",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-24T17:00:45.262Z",
-      "notes": "",
-      "position": {
-        "lat": "33.58459327041162",
-        "lng": "-7.58657455444336"
-      },
-      "id": 1
-    },
-    {
-      "cityName": "Casablanca",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-24T17:01:14.032Z",
-      "notes": "",
-      "position": {
-        "lat": "33.5998041868908",
-        "lng": "-7.48921036720276"
-      },
-      "id": 2
-    },
-    {
-      "cityName": "Sale",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-26T17:17:06.421Z",
-      "notes": "",
-      "position": {
-        "lat": "34.014051898336305",
-        "lng": "-6.795517625559547"
-      },
-      "id": 3
-    },
-    {
       "cityName": "Hun",
       "country": "Libya",
       "emoji": "🇱🇾",
@@ -61,16 +25,28 @@
       "id": 5
     },
     {
-      "cityName": "Albahraoyine",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2024-07-27T12:21:42.192Z",
-      "notes": "",
+      "cityName": "Felahiye",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-07-28T11:07:44.139Z",
+      "notes": "good",
       "position": {
-        "lat": "35.737595151747826",
-        "lng": "-5.729370117187501"
+        "lat": "39.08850195155841",
+        "lng": "35.59432983398438"
       },
       "id": 6
+    },
+    {
+      "cityName": "Culla",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-28T11:34:05.529Z",
+      "notes": "",
+      "position": {
+        "lat": "40.27743027053821",
+        "lng": "-0.15930175781250003"
+      },
+      "id": 7
     }
   ]
 }

@@ -5,11 +5,14 @@ import "./index.css";
 import "leaflet/dist/leaflet.css";
 
 import { CitiesProvider } from "./shared/contexts/CitiesContext.jsx";
+import { AuthProvider } from "./shared/contexts/FakeAuthContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CitiesProvider>
-      <App />
-    </CitiesProvider>
+    <AuthProvider>
+      <CitiesProvider>
+        <App />
+      </CitiesProvider>
+    </AuthProvider>
   </React.StrictMode>
 );

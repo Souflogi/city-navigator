@@ -8,7 +8,7 @@ import Button from "../shared/components/Button";
 import { useUrlPosition } from "../shared/hooks/useUrlPosition";
 import styles from "./Form.module.css";
 import { useNavigate } from "react-router-dom";
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+import { useCitiesContext } from "../shared/contexts/CitiesContext";
 
 // Convert country code to emoji
 export function convertToEmoji(countryCode) {
@@ -37,7 +37,7 @@ function Form() {
   const [isLoadingGeoLocoding, setIsloadingGeoLocoding] = useState(null);
   const [geocodingError, setGeocodingError] = useState("");
 
-  const { addCityToDb, loading: contextLoading } = useConsumeCitiesContext();
+  const { addCityToDb, loading: contextLoading } = useCitiesContext();
 
   const navigate = useNavigate();
 

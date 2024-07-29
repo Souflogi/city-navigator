@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import styles from "./CityInfo.module.css";
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+import { useCitiesContext } from "../shared/contexts/CitiesContext";
 import { useEffect } from "react";
 import Spinner from "../shared/components/Spinner";
 import BackButton from "../shared/components/BackButton";
@@ -15,7 +15,7 @@ const formatDate = date =>
 
 function CityInfo() {
   const { cityId } = useParams();
-  const { getCity, currentCity, loading } = useConsumeCitiesContext();
+  const { getCity, currentCity, loading } = useCitiesContext();
 
   useEffect(() => {
     //this is fetching method coming from the context

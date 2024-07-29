@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
-import { useConsumeCitiesContext } from "../shared/contexts/CitiesContext";
+import { useCitiesContext } from "../shared/contexts/CitiesContext";
 
 function CityItem({ city }) {
-  const { currentCity, deleteCityFromDb } = useConsumeCitiesContext();
+  const { currentCity, deleteCityFromDb } = useCitiesContext();
 
   const active = city.id === currentCity.id;
 
